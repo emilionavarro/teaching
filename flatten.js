@@ -5,20 +5,26 @@ function isDefined(x) {
         return false;
 }
 
-function flatten (a, aout) {    
+function flatten (a, aout, index) {    
     if (aout === undefined)
         aout = [];
-    
-    console.log("-------------------");
-    console.log("Current item: ");
-    console.log(a);
+    if (index === undefined)
+	index = 0;
+
+    var string = "";
+    var string2 = JSON.stringify(a);
+    for( var i = 0; i < index; i++){
+	string += "--";
+    }
+
+    console.log(string + string2);
 
     for (var i = 0, len = a.length; i < len; i++) {
         if (Array.isArray(a[i])) {
-            flatten(a[i], aout);
+            flatten(a[i], aout, index + 1);
         } else {
-            console.log("Found: " + a[i]);
             aout.push(a[i]);
+            console.log(string + "--" + a[i]);
         }
     }
 

@@ -11,20 +11,21 @@ function flatten (a, aout, index) {
     if (index === undefined)
 	index = 0;
 
-    var string = "";
-    var string2 = JSON.stringify(a);
+    var level = "";
+    var arrayString = JSON.stringify(a);
+
     for( var i = 0; i < index; i++){
-	string += "--";
+	level += "--";
     }
 
-    console.log(string + string2);
+    console.log(level + arrayString);
 
     for (var i = 0, len = a.length; i < len; i++) {
         if (Array.isArray(a[i])) {
             flatten(a[i], aout, index + 1);
         } else {
             aout.push(a[i]);
-            console.log(string + "--" + a[i]);
+            console.log(level + "--" + a[i]);
         }
     }
 

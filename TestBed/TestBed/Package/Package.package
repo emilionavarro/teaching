@@ -2,6 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="79a4bab9-772d-4081-b0f9-fb4cbbcf9cbf" solutionId="79a4bab9-772d-4081-b0f9-fb4cbbcf9cbf" resetWebServer="false" sharePointProductVersion="15.0" name="TestBed" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <features>
     <featureReference itemId="a6566ca5-c67f-46ff-a924-302abb29fbd1" />
+    <featureReference itemId="d077cfef-d8b7-41ca-b1c4-8ba14a0bf32b" />
   </features>
   <projectItems>
     <projectItemReference itemId="11f8be4b-6e3e-4d82-9a18-3f557cbf174c" />

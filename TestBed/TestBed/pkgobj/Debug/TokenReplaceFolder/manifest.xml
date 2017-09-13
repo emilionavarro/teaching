@@ -16,5 +16,6 @@
   </TemplateFiles>
   <FeatureManifests>
     <FeatureManifest Location="TestBed_Feature1\Feature.xml" />
+    <FeatureManifest Location="TestBed_TimerJobFeature\Feature.xml" />
   </FeatureManifests>
 </Solution>

@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Counter.cs" />
+    <Compile Include="Features\TimerJobFeature\TimerJobFeature.EventReceiver.cs">
+      <DependentUpon>TimerJobFeature.feature</DependentUpon>
+    </Compile>
     <Compile Include="HelloWorld\HelloWorld.cs" />
     <Compile Include="HelloWorld\HelloWorldUserControl.ascx.cs">
       <DependentUpon>HelloWorldUserControl.ascx</DependentUpon>
@@ -89,11 +92,15 @@
     <Compile Include="Layouts\TestBed\PakTesting.aspx.designer.cs">
       <DependentUpon>PakTesting.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\TestBed\TimerJobDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Features\Feature1\Feature1.feature">
       <FeatureId>{a6566ca5-c67f-46ff-a924-302abb29fbd1}</FeatureId>
+    </None>
+    <None Include="Features\TimerJobFeature\TimerJobFeature.feature">
+      <FeatureId>{d077cfef-d8b7-41ca-b1c4-8ba14a0bf32b}</FeatureId>
     </None>
     <None Include="HelloWorld\HelloWorld.webpart" />
     <None Include="HelloWorld\SharePointProjectItem.spdata">
@@ -117,6 +124,9 @@
   <ItemGroup>
     <Content Include="Features\Feature1\Feature1.Template.xml">
       <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\TimerJobFeature\TimerJobFeature.Template.xml">
+      <DependentUpon>TimerJobFeature.feature</DependentUpon>
     </Content>
     <Content Include="HelloWorld\Elements.xml" />
     <Content Include="HelloWorld\HelloWorldUserControl.ascx" />

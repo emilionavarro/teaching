@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Document (0x0101) -->
+  <ContentType ID="0x010100D49FBCF5D7C545A8BDFA8F18AAFE6630" Name="Things" Group="Custom Content Types" Description="My Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{246D0907-637C-46b7-9AA0-0BB914DAA832}" DisplayName="$Resources:core,Author;" Required="TRUE" Description="$Resources:core,_AuthorDesc;" Name="_Author" Sealed="TRUE" ShowInFileDlg="FALSE" />
+      <FieldRef ID="{92b8e9d0-a11b-418f-bf1c-c44aaa73075d}" DisplayName="$Resources:core,Primary_Item_ID;" Required="FALSE" Name="Item" Sealed="TRUE" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

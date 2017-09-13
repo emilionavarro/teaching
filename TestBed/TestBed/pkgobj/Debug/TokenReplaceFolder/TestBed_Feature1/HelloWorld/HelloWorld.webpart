@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="TestBed.HelloWorld.HelloWorld, TestBed, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d48b244bc905446f" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">TestBed - HelloWorld</property>
+        <property name="Description" type="string">My Visual Web Part</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

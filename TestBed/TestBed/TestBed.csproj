@@ -1,0 +1,135 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB97E26C-181A-4788-BA1A-AD0AC0D9CD38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestBed</RootNamespace>
+    <AssemblyName>TestBed</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Counter.cs" />
+    <Compile Include="HelloWorld\HelloWorld.cs" />
+    <Compile Include="HelloWorld\HelloWorldUserControl.ascx.cs">
+      <DependentUpon>HelloWorldUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelloWorld\HelloWorldUserControl.ascx.designer.cs">
+      <DependentUpon>HelloWorldUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\TestBed\GridCounter.aspx.cs">
+      <DependentUpon>GridCounter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TestBed\GridCounter.aspx.designer.cs">
+      <DependentUpon>GridCounter.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\TestBed\GridListView.aspx.cs">
+      <DependentUpon>GridListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TestBed\GridListView.aspx.designer.cs">
+      <DependentUpon>GridListView.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\TestBed\ListOfThings.aspx.cs">
+      <DependentUpon>ListOfThings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TestBed\ListOfThings.aspx.designer.cs">
+      <DependentUpon>ListOfThings.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\TestBed\PakTesting.aspx.cs">
+      <DependentUpon>PakTesting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TestBed\PakTesting.aspx.designer.cs">
+      <DependentUpon>PakTesting.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{a6566ca5-c67f-46ff-a924-302abb29fbd1}</FeatureId>
+    </None>
+    <None Include="HelloWorld\HelloWorld.webpart" />
+    <None Include="HelloWorld\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b7519c09-5326-4544-8992-b4f95946560b}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{11f8be4b-6e3e-4d82-9a18-3f557cbf174c}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{79a4bab9-772d-4081-b0f9-fb4cbbcf9cbf}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Things\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{008e109c-e34e-4670-859c-6d8328e4b337}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="HelloWorld\Elements.xml" />
+    <Content Include="HelloWorld\HelloWorldUserControl.ascx" />
+    <Content Include="Layouts\TestBed\GridCounter.aspx" />
+    <Content Include="Layouts\TestBed\GridListView.aspx" />
+    <Content Include="Layouts\TestBed\ListOfThings.aspx" />
+    <Content Include="Layouts\TestBed\PakTesting.aspx" />
+    <Content Include="Things\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="1aa3f0db-f8c0-421f-8599-1650fe077729" Scope="Site" Title="TestBed Feature1">
+  <ElementManifests>
+    <ElementManifest Location="HelloWorld\Elements.xml" />
+    <ElementFile Location="HelloWorld\HelloWorld.webpart" />
+    <ElementManifest Location="Things\Elements.xml" />
+  </ElementManifests>
+</Feature>

@@ -15,8 +15,9 @@
             /* Add shadows to create the "card" effect */
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;
-            margin:auto;
-            width:50%;
+            margin: auto;
+            width: 50%;
+            padding:10px;
         }
 
         /* On mouse-over, add a deeper shadow */
@@ -27,6 +28,10 @@
         /* Add some padding inside the card container */
         .gimmalcontainer {
             padding: 2px 16px;
+        }
+
+        h1 {
+            padding:20px;
         }
     </style>
 </asp:Content>
@@ -41,30 +46,33 @@
 
             PageMethods.GetLog(function (response) {
                 $scope.$apply(function () {
-                    $scope.items = JSON.parse(response);
+                    $scope.changelogs = JSON.parse(response);
                 });
             });
 
         });
 
-
-
     </script>
 
     <div ng-app="myApp" ng-controller="changelog">
-        <div ng-repeat="item in items">
-            <div class="gimmalcard">
-                <div class="gimmalcontainer">
-                    <h4>Name: {{item.Name}}</h4>
-                    <p>Author: {{item.Author}}</p>
-                    <p>Date: {{item.DateString}}</p>
+
+        <div ng-repeat="log in changelogs">
+
+            <h1 ng-if="log.Count > 1 || log.Count === 0">{{log.Name}} - ({{log.Count}} Entries)</h1>
+            <h1 ng-if="log.Count === 1">{{log.Name}} - ({{log.Count}} Entry)</h1>
+
+
+            <div ng-repeat="item in log.Changelog">
+                <div class="gimmalcard">
+                    <div class="gimmalcontainer">
+                        <h4>Name: {{item.Name}}</h4>
+                        <p>Author: {{item.Author}}</p>
+                        <p>Date: {{item.DateString}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
 
 
@@ -75,7 +83,7 @@
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
-    My Application Page
+    Hey, that's pretty good
 </asp:Content>
 
 

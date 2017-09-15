@@ -17,6 +17,7 @@ namespace TestBed.Layouts.TestBed
     public partial class changelog : LayoutsPageBase
     {
         static List<ChangelogItem> m_ChangeLog { get; set; } = new List<ChangelogItem>();
+        static List<ChangeLogCollection> m_changelogs { get; set; } = new List<ChangeLogCollection>();
 
         private SPJobDefinition GetDemoJobDefinition(SPJobDefinitionCollection ajobDefinitions)
         {
@@ -39,7 +40,7 @@ namespace TestBed.Layouts.TestBed
             IEnumerable<SPJobHistory> jobHistory = demoJob == null ? null : demoJob.HistoryEntries;
             ScriptManager SM = null;
 
-            if(ScriptManager.GetCurrent(this.Page) != null)
+            if (ScriptManager.GetCurrent(this.Page) != null)
             {
                 SM = ScriptManager.GetCurrent(this.Page);
 
@@ -47,27 +48,41 @@ namespace TestBed.Layouts.TestBed
             }
 
             if (jobHistory != null)
-                DisplayChangelog(webService.WebApplications.ElementAt(0).Sites[1], jobHistory.ElementAt(0).EndTime);
+            {
+                //BuildChangelogs(webService.WebApplications.ElementAt(0).Sites[1], jobHistory.ElementAt(0).EndTime);
+                BuildChangelogs(webService.WebApplications.ElementAt(0).Sites, jobHistory.ElementAt(0).EndTime);
+            }
+
 
         }
 
-        private void DisplayChangelog(SPSite asite, DateTime aendTime)
+        private void BuildChangelogs(SPSiteCollection asites, DateTime aendTime)
         {
+            ChangeLogCollection changelogCollection = null;
+
             ClearChangelog();
-            GetChangelog(asite, aendTime);
+
+            foreach (SPSite site in asites)
+            {
+                changelogCollection = new ChangeLogCollection(site.ID, site.Url);
+                changelogCollection.Changelog = GetChangelog(site, aendTime); //get the new changelog
+
+                m_changelogs.Add(changelogCollection);
+            }
         }
 
         private void ClearChangelog()
         {
-            m_ChangeLog.Clear();
+            m_changelogs.Clear();
         }
 
-        private void GetChangelog(SPSite asite, DateTime aendTime)
+        private List<ChangelogItem> GetChangelog(SPSite asite, DateTime aendTime)
         {
             SPChangeCollection changes;
-            SPChangeQueryBuilder queryBuilder = new SPChangeQueryBuilder(false, true, true);
+            SPChangeQueryBuilder queryBuilder = new SPChangeQueryBuilder(false, true, true, asite, aendTime);
             Guid uniqueId = Guid.Empty;
             SPFile file = null;
+            List<ChangelogItem> currentChangelog = new List<ChangelogItem>();
 
             changes = asite.GetChanges(queryBuilder.query);
 
@@ -79,11 +94,14 @@ namespace TestBed.Layouts.TestBed
                 try
                 {
                     if (file.TimeLastModified != null && file.TimeLastModified > aendTime)
-                        m_ChangeLog.Add(new ChangelogItem(file));
+                        //m_ChangeLog.Add(new ChangelogItem(file));
+                        currentChangelog.Add(new ChangelogItem(file));
                 }
                 catch
                 { }
             }
+
+            return currentChangelog;
         }
 
         private Guid GetSPUniqueID(SPChange achangeObject)
@@ -95,16 +113,16 @@ namespace TestBed.Layouts.TestBed
             else if (type == typeof(SPChangeFile))
                 return ((SPChangeFile)achangeObject).UniqueId;
             else if (type == typeof(SPChangeFolder))
-                {/*handle folders*/}
+            {/*handle folders*/}
 
-            return Guid.Empty;      
+            return Guid.Empty;
         }
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static string GetLog()
         {
-            return new JavaScriptSerializer().Serialize(m_ChangeLog);
+            return new JavaScriptSerializer().Serialize(m_changelogs);
         }
     }
 
@@ -128,9 +146,27 @@ namespace TestBed.Layouts.TestBed
 
         public ChangelogItem(SPFile file)
         {
-            Name = file.Name;   
+            Name = file.Name;
             Author = file.Author.ToString();
             Date = file.TimeLastModified;
+        }
+    }
+
+    public class ChangeLogCollection
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public List<ChangelogItem> Changelog { get; set; }
+        public int Count {
+            get
+            {
+                return this.Changelog.Count;
+            }
+        }
+        public ChangeLogCollection(Guid aguid, string aname)
+        {
+            ID = aguid.ToString();
+            Name = aname;
         }
     }
 
@@ -138,7 +174,7 @@ namespace TestBed.Layouts.TestBed
     {
         public SPChangeQuery query { get; set; }
 
-        public SPChangeQueryBuilder(bool aincludeFiles, bool aincludeItems, bool aincludeFolders)
+        public SPChangeQueryBuilder(bool aincludeFiles, bool aincludeItems, bool aincludeFolders, SPSite asite, DateTime aendTime)
         {
             query = new SPChangeQuery(false, false);
 
@@ -149,6 +185,14 @@ namespace TestBed.Layouts.TestBed
             query.Delete = true;
             query.Move = true;
             query.FetchLimit = 2000;
+
+            this.SetChangeToken(asite, aendTime);
+        }
+
+        private void SetChangeToken(SPSite asite, DateTime aendTime)
+        {
+            string strChangeToken = string.Format("1;1;{0};{1};-1", asite.ID.ToString(), aendTime.Ticks.ToString());
+            query.ChangeTokenStart = new SPChangeToken(strChangeToken);
         }
     }
 }

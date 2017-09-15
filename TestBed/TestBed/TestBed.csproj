@@ -46,6 +46,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
@@ -63,6 +64,10 @@
     </Compile>
     <Compile Include="HelloWorld\HelloWorldUserControl.ascx.designer.cs">
       <DependentUpon>HelloWorldUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\TestBed\changelog.aspx.cs">
+      <DependentUpon>changelog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Layouts\TestBed\GridCounter.aspx.cs">
       <DependentUpon>GridCounter.aspx</DependentUpon>
@@ -130,6 +135,7 @@
     </Content>
     <Content Include="HelloWorld\Elements.xml" />
     <Content Include="HelloWorld\HelloWorldUserControl.ascx" />
+    <Content Include="Layouts\TestBed\changelog.aspx" />
     <Content Include="Layouts\TestBed\GridCounter.aspx" />
     <Content Include="Layouts\TestBed\GridListView.aspx" />
     <Content Include="Layouts\TestBed\ListOfThings.aspx" />

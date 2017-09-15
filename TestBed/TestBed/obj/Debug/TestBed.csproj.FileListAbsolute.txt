@@ -80,6 +80,7 @@ C:\Users\spfarm\source\repos\TestBed\TestBed\bin\Debug\zh-Hant\System.Spatial.re
 C:\Users\spfarm\source\repos\TestBed\TestBed\obj\Debug\TestBed.csproj.CoreCompileInputs.cache
 C:\Users\spfarm\source\repos\TestBed\TestBed\obj\Debug\TestBed.dll
 C:\Users\spfarm\source\repos\TestBed\TestBed\obj\Debug\TestBed.pdb
+C:\teaching\TestBed\TestBed\obj\Debug\TestBed.csproj.CoreCompileInputs.cache
 C:\teaching\TestBed\TestBed\bin\Debug\TestBed.dll
 C:\teaching\TestBed\TestBed\bin\Debug\TestBed.pdb
 C:\teaching\TestBed\TestBed\bin\Debug\Microsoft.SharePoint.Client.ServerRuntime.dll
@@ -159,7 +160,5 @@ C:\teaching\TestBed\TestBed\bin\Debug\ko\System.Spatial.resources.dll
 C:\teaching\TestBed\TestBed\bin\Debug\ru\System.Spatial.resources.dll
 C:\teaching\TestBed\TestBed\bin\Debug\zh-Hans\System.Spatial.resources.dll
 C:\teaching\TestBed\TestBed\bin\Debug\zh-Hant\System.Spatial.resources.dll
-C:\teaching\TestBed\TestBed\obj\Debug\TestBed.csprojResolveAssemblyReference.cache
-C:\teaching\TestBed\TestBed\obj\Debug\TestBed.csproj.CoreCompileInputs.cache
 C:\teaching\TestBed\TestBed\obj\Debug\TestBed.dll
 C:\teaching\TestBed\TestBed\obj\Debug\TestBed.pdb

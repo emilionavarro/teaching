@@ -1,2 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" ActivateOnDefault="FALSE" Id="53b29aff-33b1-4e3f-be6e-6d5114770d90" ReceiverAssembly="TestBed, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d48b244bc905446f" ReceiverClass="TestBed.Features.TimerJobFeature.TimerJobFeatureEventReceiver" Scope="WebApplication" Title="TimerJobFeature"></Feature>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" AlwaysForceInstall="TRUE" Id="53b29aff-33b1-4e3f-be6e-6d5114770d90" ReceiverAssembly="TestBed, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d48b244bc905446f" ReceiverClass="TestBed.Features.TimerJobFeature.TimerJobFeatureEventReceiver" Scope="Farm" Title="TimerJobFeature"></Feature>

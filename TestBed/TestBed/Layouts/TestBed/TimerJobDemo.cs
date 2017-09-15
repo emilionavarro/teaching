@@ -29,6 +29,14 @@ namespace TestBed.Layouts
         {
             base.Execute(targetInstanceId);
 
+            //((SPWebApplication)this.Parent).Sites[0].WebApplication.RunningJobs
+            //SPWebApplication spweb = this.Parent as SPWebApplication;
+            //SPListCollection mySPLists = spweb.Sites[0].RootWeb.Lists;
+
+            //for (var i = 0; i < mySPLists.Count; i++)
+            //{
+            //    var x = mySPLists[i];
+            //}
             //do stuff
         }
     }

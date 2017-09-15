@@ -9,6 +9,7 @@
   </Assemblies>
   <TemplateFiles>
     <TemplateFile Location="CONTROLTEMPLATES\TestBed\HelloWorld\HelloWorldUserControl.ascx" />
+    <TemplateFile Location="Layouts\TestBed\changelog.aspx" />
     <TemplateFile Location="Layouts\TestBed\GridCounter.aspx" />
     <TemplateFile Location="Layouts\TestBed\GridListView.aspx" />
     <TemplateFile Location="Layouts\TestBed\ListOfThings.aspx" />

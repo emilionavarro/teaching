@@ -1,4 +1,6 @@
 ﻿(function () {
+
+
     var app = angular.module('myApp', []);
 
     function Changelog() {
@@ -16,4 +18,5 @@
     var cl = new Changelog();
 
     cl.load();
+    alert("hi");
 }());

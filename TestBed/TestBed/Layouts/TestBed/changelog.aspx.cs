@@ -34,10 +34,7 @@ namespace TestBed.Layouts.TestBed
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SPWebService webService = SPFarm.Local.Services.OfType<SPWebService>().FirstOrDefault();
-            SPJobDefinitionCollection jobDefinitions = webService.WebApplications.ElementAt(0).JobDefinitions;
-            SPJobDefinition demoJob = GetDemoJobDefinition(jobDefinitions);
-            IEnumerable<SPJobHistory> jobHistory = demoJob == null ? null : demoJob.HistoryEntries;
+
             ScriptManager SM = null;
 
             if (ScriptManager.GetCurrent(this.Page) != null)
@@ -46,14 +43,6 @@ namespace TestBed.Layouts.TestBed
 
                 SM.EnablePageMethods = true;
             }
-
-            if (jobHistory != null)
-            {
-                //BuildChangelogs(webService.WebApplications.ElementAt(0).Sites[1], jobHistory.ElementAt(0).EndTime);
-                BuildChangelogs(webService.WebApplications.ElementAt(0).Sites, jobHistory.ElementAt(0).EndTime);
-            }
-
-
         }
 
         private void BuildChangelogs(SPSiteCollection asites, DateTime aendTime)

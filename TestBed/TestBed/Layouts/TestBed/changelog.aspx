@@ -10,47 +10,13 @@
 
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
-    <style>
-        .gimmalcard {
-            /* Add shadows to create the "card" effect */
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            margin: auto;
-            width: 50%;
-            padding:10px;
-        }
-
-        /* On mouse-over, add a deeper shadow */
-        .gimmalcard:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-
-        /* Add some padding inside the card container */
-        .gimmalcontainer {
-            padding: 2px 16px;
-        }
-
-        h1 {
-            padding:20px;
-        }
-    </style>
+    <script type="text/javascript" src="scripts/changelog.js"></script>
+     <link rel="stylesheet" type="text/css" href="styles/changelog.css">
 </asp:Content>
-
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
     <script type="text/javascript">
-        var app = angular.module('myApp', []);
-
-        app.controller('changelog', function ($scope) {
-
-            PageMethods.GetLog(function (response) {
-                $scope.$apply(function () {
-                    $scope.changelogs = JSON.parse(response);
-                });
-            });
-
-        });
 
     </script>
 

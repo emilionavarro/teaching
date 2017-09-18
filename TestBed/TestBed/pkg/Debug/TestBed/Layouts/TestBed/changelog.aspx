@@ -10,6 +10,7 @@
 
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/changelog.js"></script>
     <style>
         .gimmalcard {
             /* Add shadows to create the "card" effect */
@@ -40,17 +41,17 @@
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
     <script type="text/javascript">
-        var app = angular.module('myApp', []);
+        //var app = angular.module('myApp', []);
 
-        app.controller('changelog', function ($scope) {
+        //app.controller('changelog', function ($scope) {
 
-            PageMethods.GetLog(function (response) {
-                $scope.$apply(function () {
-                    $scope.changelogs = JSON.parse(response);
-                });
-            });
+        //    PageMethods.GetLog(function (response) {
+        //        $scope.$apply(function () {
+        //            $scope.changelogs = JSON.parse(response);
+        //        });
+        //    });
 
-        });
+        //});
 
     </script>
 

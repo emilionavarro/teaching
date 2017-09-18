@@ -14,6 +14,7 @@
     <TemplateFile Location="Layouts\TestBed\GridListView.aspx" />
     <TemplateFile Location="Layouts\TestBed\ListOfThings.aspx" />
     <TemplateFile Location="Layouts\TestBed\PakTesting.aspx" />
+    <TemplateFile Location="Layouts\TestBed\scripts\changelog.js" />
   </TemplateFiles>
   <FeatureManifests>
     <FeatureManifest Location="TestBed_Feature1\Feature.xml" />

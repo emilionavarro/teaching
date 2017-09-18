@@ -140,6 +140,7 @@
     <Content Include="Layouts\TestBed\GridListView.aspx" />
     <Content Include="Layouts\TestBed\ListOfThings.aspx" />
     <Content Include="Layouts\TestBed\PakTesting.aspx" />
+    <Content Include="Layouts\TestBed\scripts\changelog.js" />
     <Content Include="Things\Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

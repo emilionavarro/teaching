@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Counter.cs" />
+    <Compile Include="Classes\RDChangelog.cs" />
     <Compile Include="Features\TimerJobFeature\TimerJobFeature.EventReceiver.cs">
       <DependentUpon>TimerJobFeature.feature</DependentUpon>
     </Compile>
@@ -97,6 +98,13 @@
     <Compile Include="Layouts\TestBed\PakTesting.aspx.designer.cs">
       <DependentUpon>PakTesting.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\TestBed\sitelog.aspx.cs">
+      <DependentUpon>sitelog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TestBed\sitelog.aspx.designer.cs">
+      <DependentUpon>sitelog.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\TestBed\TimerJobDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,7 +133,6 @@
       <SharePointProjectItemId>{008e109c-e34e-4670-859c-6d8328e4b337}</SharePointProjectItemId>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Features\Feature1\Feature1.Template.xml">
       <DependentUpon>Feature1.feature</DependentUpon>
@@ -141,6 +148,9 @@
     <Content Include="Layouts\TestBed\ListOfThings.aspx" />
     <Content Include="Layouts\TestBed\PakTesting.aspx" />
     <Content Include="Layouts\TestBed\scripts\changelog.js" />
+    <Content Include="Layouts\TestBed\scripts\sitelog.js" />
+    <Content Include="Layouts\TestBed\sitelog.aspx" />
+    <Content Include="Layouts\TestBed\styles\changelog.css" />
     <Content Include="Things\Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

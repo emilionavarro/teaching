@@ -11,47 +11,13 @@
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
     <script type="text/javascript" src="scripts/changelog.js"></script>
-    <style>
-        .gimmalcard {
-            /* Add shadows to create the "card" effect */
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            margin: auto;
-            width: 50%;
-            padding:10px;
-        }
-
-        /* On mouse-over, add a deeper shadow */
-        .gimmalcard:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-
-        /* Add some padding inside the card container */
-        .gimmalcontainer {
-            padding: 2px 16px;
-        }
-
-        h1 {
-            padding:20px;
-        }
-    </style>
+    <script data-require="ui-bootstrap@*" data-semver="1.3.2" src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-1.3.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/changelog.css">
 </asp:Content>
-
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
     <script type="text/javascript">
-        //var app = angular.module('myApp', []);
-
-        //app.controller('changelog', function ($scope) {
-
-        //    PageMethods.GetLog(function (response) {
-        //        $scope.$apply(function () {
-        //            $scope.changelogs = JSON.parse(response);
-        //        });
-        //    });
-
-        //});
 
     </script>
 
@@ -59,7 +25,9 @@
 
         <div ng-repeat="log in changelogs">
 
-            <h1 ng-if="log.Count > 1 || log.Count === 0">{{log.Name}} - ({{log.Count}} Entries)</h1>
+            <h1 ng-if="log.Count > 1 || log.Count === 0">
+                {{log.Name}} - ({{log.Count}} Entries) <a href="{{log.URL}}">View All</a>
+            </h1>
             <h1 ng-if="log.Count === 1">{{log.Name}} - ({{log.Count}} Entry)</h1>
 
 

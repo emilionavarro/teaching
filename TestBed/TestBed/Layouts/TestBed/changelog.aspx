@@ -11,7 +11,8 @@
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
     <script type="text/javascript" src="scripts/changelog.js"></script>
-     <link rel="stylesheet" type="text/css" href="styles/changelog.css">
+    <script data-require="ui-bootstrap@*" data-semver="1.3.2" src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-1.3.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/changelog.css">
 </asp:Content>
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
@@ -24,7 +25,9 @@
 
         <div ng-repeat="log in changelogs">
 
-            <h1 ng-if="log.Count > 1 || log.Count === 0">{{log.Name}} - ({{log.Count}} Entries)</h1>
+            <h1 ng-if="log.Count > 1 || log.Count === 0">
+                {{log.Name}} - ({{log.Count}} Entries) <a ng-if="log.Count !== 0" href="{{log.URL}}">View All</a>
+            </h1>
             <h1 ng-if="log.Count === 1">{{log.Name}} - ({{log.Count}} Entry)</h1>
 
 

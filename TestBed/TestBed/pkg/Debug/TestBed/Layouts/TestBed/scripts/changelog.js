@@ -1,7 +1,5 @@
 ﻿(function () {
-
-
-    var app = angular.module('myApp', []);
+    var app = angular.module('myApp', ['ui.bootstrap']);
 
     function Changelog() {
         this.load = function () {
@@ -18,5 +16,4 @@
     var cl = new Changelog();
 
     cl.load();
-    alert("hi");
 }());

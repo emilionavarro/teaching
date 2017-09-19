@@ -15,6 +15,9 @@
     <TemplateFile Location="Layouts\TestBed\ListOfThings.aspx" />
     <TemplateFile Location="Layouts\TestBed\PakTesting.aspx" />
     <TemplateFile Location="Layouts\TestBed\scripts\changelog.js" />
+    <TemplateFile Location="Layouts\TestBed\scripts\sitelog.js" />
+    <TemplateFile Location="Layouts\TestBed\sitelog.aspx" />
+    <TemplateFile Location="Layouts\TestBed\styles\changelog.css" />
   </TemplateFiles>
   <FeatureManifests>
     <FeatureManifest Location="TestBed_Feature1\Feature.xml" />

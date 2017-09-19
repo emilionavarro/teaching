@@ -47,4 +47,9 @@
 </asp:Content>
 
 <asp:Content ID="PageTitleInTitleArea" ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
+    <div>
+        <a style="color:aquamarine" href="changelog.aspx">Back</a> Details
+    </div>
+
+    
 </asp:Content>

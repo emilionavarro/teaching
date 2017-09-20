@@ -26,7 +26,7 @@
         <div ng-repeat="log in changelogs">
 
             <h1 ng-if="log.Count > 1 || log.Count === 0">
-                {{log.Name}} - ({{log.Count}} Entries) <a href="{{log.URL}}">View All</a>
+                {{log.Name}} - ({{log.Count}} Entries) <a ng-if="log.Count !== 0" href="{{log.URL}}">View All</a>
             </h1>
             <h1 ng-if="log.Count === 1">{{log.Name}} - ({{log.Count}} Entry)</h1>
 

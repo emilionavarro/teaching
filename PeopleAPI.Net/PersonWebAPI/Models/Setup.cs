@@ -11,28 +11,29 @@ namespace PersonWebAPI.Models
         /// Variables
         /// </summary>
         private const int MAX_RANDOM_DEPT = 5;
-        public static List<Department> departments = new List<Department>();
+        //public static List<Department> departments = BuildRandomDepartments().ToList();
         public static List<Job> jobs = new List<Job>();
         public static List<Person> people = new List<Person>();
+        public static List<Department> departments = BuildDepartments().ToList();
 
         /// <summary>
         /// Methods
         /// </summary>
-        public static void BuildRandomDepartments()
+        public static IEnumerable<Department> BuildRandomDepartments()
         {
-            if (departments.Count == MAX_RANDOM_DEPT)
-                return;
+            List<Department> tempdept = new List<Department>();
 
             for( int counter = 0; counter < MAX_RANDOM_DEPT; counter++)
             {
-                departments.Add(new Department());
+                tempdept.Add(new Department());
             }
+
+            return tempdept;
         }
 
-        public static void BuildDepartments()
+        public static IEnumerable<Department> BuildDepartments()
         {
-            if (departments.Count > 0)
-                return;
+            List<Department> tempdept = new List<Department>();
 
             // Create jobs
             jobs.Add(new Job(1, "Programmer"));
@@ -46,9 +47,11 @@ namespace PersonWebAPI.Models
             people.Add(new Person(4, "Zach", jobs.Where(job => job.Name == "Dev").FirstOrDefault()));
 
             // Create Departments 
-            departments.Add(new Department(1, "Dev", "Dev Desc", people.Where(person => person.job.Name == "Dev").ToList()));
-            departments.Add(new Department(2, "Code Monkeys", "Code Monkeys Desc", people.Where(person => person.job.Name == "Programmer").ToList()));
-            departments.Add(new Department(3, "Yes Men", "Yes Men", people.Where(person => person.job.Name == "Yes man").ToList()));
+            tempdept.Add(new Department(1, "Dev", "Dev Desc", people.Where(person => person.job.Name == "Dev").ToList()));
+            tempdept.Add(new Department(2, "Code Monkeys", "Code Monkeys Desc", people.Where(person => person.job.Name == "Programmer").ToList()));
+            tempdept.Add(new Department(3, "Yes Men", "Yes Men", people.Where(person => person.job.Name == "Yes man").ToList()));
+
+            return tempdept;
         }
     }
 }

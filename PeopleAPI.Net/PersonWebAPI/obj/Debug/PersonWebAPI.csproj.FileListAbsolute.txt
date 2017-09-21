@@ -71,3 +71,5 @@ D:\JavaScriptClasses\PersonWebAPI\PersonWebAPI\bin\Microsoft.AI.Web.xml
 D:\JavaScriptClasses\PersonWebAPI\PersonWebAPI\obj\Debug\PersonWebAPI.csprojResolveAssemblyReference.cache
 D:\JavaScriptClasses\PersonWebAPI\PersonWebAPI\obj\Debug\PersonWebAPI.dll
 D:\JavaScriptClasses\PersonWebAPI\PersonWebAPI\obj\Debug\PersonWebAPI.pdb
+D:\JavaScriptClasses\PersonWebAPI\PersonWebAPI\bin\WebActivator.dll
+D:\JavaScriptClasses\PersonWebAPI\PersonWebAPI\bin\WebActivator.pdb

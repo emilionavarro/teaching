@@ -8,11 +8,10 @@ using PersonWebAPI.Models;
 
 namespace PersonWebAPI.Controllers
 {
-    public class JobsController : ApiController
+    public class JobController : ApiController
     {
         public IEnumerable<Job> GetAllDepartments()
         {
-            Setup.BuildDepartments();
             return Setup.jobs;
         }
 

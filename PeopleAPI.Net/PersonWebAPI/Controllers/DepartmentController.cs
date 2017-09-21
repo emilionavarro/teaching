@@ -11,8 +11,7 @@ namespace PersonWebAPI.Controllers
     public class DepartmentController : ApiController
     {
         public IEnumerable<Department> GetAllDepartments()
-        {
-            Setup.BuildDepartments();
+        { 
             return Setup.departments;
         }
 
